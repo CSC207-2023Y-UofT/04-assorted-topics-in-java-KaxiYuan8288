@@ -23,11 +23,11 @@ class DrivableMap {
     }
 
     public boolean addDrivable(String id, Drivable item) {
-        if (drivable_map.containsKey(id)) {
-            return false;
+        if (!drivable_map.containsKey(id)) {
+            drivable_map.put(id, item);
+            return true;
         }
-        drivable_map.put(id, item);
-        return true;
+        return false;
     }
 
 
