@@ -22,35 +22,32 @@ class DrivableMap {
         drivable_map = new HashMap<>();
     }
 
-  public boolean addDrivable(String _id, Drivable obj){
-        if (!drivable_map.containsKey(_id)){
-            drivable_map.put(_id, obj);
+    public boolean addDrivable(String id, Drivable item) {
+        if (!drivable_map.containsKey(id)) {
+            drivable_map.add(id, item);
             return true;
         }
         return false;
     }
 
-    /*
-     * You may want to use drivable_map.keys() or drivable_map.values() to
-     * iterate through drivable_map.
-     */
 
-    public boolean hasFasterThan(int speed){
-        for (Drivable obj: drivable_map.values()){
-            if (obj.getMaxSpeed() >= speed){
+    public boolean hasFasterThan(int speed) {
+        for (Drivable item: drivable_map.values()) {
+            if (item.getMaxSpeed() >= speed) {
                 return true;
             }
         }
         return false;
     }
 
-    public List<Tradable> getTradable(){
-        List<Tradable> result = new ArrayList<>();
-        for (Drivable obj: drivable_map.values()){
-            if (obj instanceof Tradable){
-                result.add((Tradable) obj);
+    public List<Tradable> getTradable() {
+        List<Tradable> result = new ArrayList<Tradable>();
+        for (Drivable item: drivable_map.values()) {
+            if (item instanceof Tradable) {
+                result.add((Tradable) item);
             }
         }
         return result;
     }
+
 }
