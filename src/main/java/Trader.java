@@ -34,21 +34,23 @@ public class Trader<T> {
         this.wishlist = wishlist;
         this.money = money;
     }
-    public Trader(int money){
+
+    public Trader(int money) {
         this.money = money;
         this.inventory = new ArrayList<T>();
         this.wishlist = new ArrayList<T>();
     }
 
-    public void addToWishList(T item){
-        this.wishlist.add(item);
+    public void addToWishlist(T obj) {
+        this.wishlist.add(obj);
     }
 
-    public int getSellingPrice(T item){
-        if (item instanceof Tradable){
+
+    public int getSellingPrice(T item) {
+        if (item instanceof Tradable) {
             return ((Tradable) item).getPrice();
-        }
-        else{
+        } 
+        else {
             return Tradable.MISSING_PRICE;
         }
     }
@@ -124,12 +126,14 @@ public class Trader<T> {
         return details.toString();
     }
 
-    public List<T> getWishlist(){
+    public List<T> getWishlist() {
         return this.wishlist;
     }
 
-    public List<T> getInventory(){
+    public List<T> getInventory() {
         return this.inventory;
     }
+
+}
 
 }
