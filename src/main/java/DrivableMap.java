@@ -41,16 +41,12 @@ class DrivableMap {
     }
 
     public List<Tradable> getTradable() {
-        List<Tradable> items = new ArrayList<Tradable>();
-        for (Drivable item: drivable_map.values()) {
-            if (item instanceof Tradable) {
-                items.add((Tradable) item);
+        List<Tradable> result = new ArrayList<Tradable>();
+        for (Drivable obj: drivable_map.values()) {
+            if (obj instanceof Tradable) {
+                result.add((Tradable) item);
             }
         }
-        return items;
-    }
-
-
-
-    
+        return result;
+    }    
 }
