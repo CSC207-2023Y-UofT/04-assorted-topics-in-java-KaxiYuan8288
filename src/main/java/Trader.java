@@ -41,16 +41,15 @@ public class Trader<T> {
         this.wishlist = new ArrayList<T>();
     }
 
-    public void addToWishlist(T obj) {
-        this.wishlist.add(obj);
+    public void addToWishlist(T item) {
+        this.wishlist.add(item);
     }
 
 
     public int getSellingPrice(T item) {
         if (item instanceof Tradable) {
             return ((Tradable) item).getPrice();
-        } 
-        else {
+        } else {
             return Tradable.MISSING_PRICE;
         }
     }
@@ -133,7 +132,5 @@ public class Trader<T> {
     public List<T> getInventory() {
         return this.inventory;
     }
-
-}
 
 }
